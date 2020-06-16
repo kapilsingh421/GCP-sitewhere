@@ -1,2 +1,2 @@
 # GCP-sitewhere
-The repo is demo for GCp sitewhere IOT on google kubernetes 
+The repo is demo for sitewhere IOT on google kubernetes 
