@@ -1,15 +1,10 @@
 #!/bin/bash
 
-set -v
-
-DIR="$(dirname "$0")"
-. "${DIR}/config"
-
-# Install Istio CRDs
-kubectl apply -f "https://raw.githubusercontent.com/knative/serving/master/third_party/istio-${ISTIO_VERSION}/istio-crds.yaml"
-
-# Install Istio
-kubectl apply -f "https://raw.githubusercontent.com/knative/serving/master/third_party/istio-${ISTIO_VERSION}/istio-minimal.yaml"
+curl -L https://istio.io/downloadIstio | sh -
+cd istio-1.6.2
+export PATH=$PWD/bin:$PATH
+istioctl install --set profile=demo
+kubectl label namespace default istio-injection=enabled
 
 # Check all Istio pods have STATUS 'Running'
 # kubectl get pods -n istio-system
