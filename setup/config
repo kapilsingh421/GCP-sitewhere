@@ -1,0 +1,21 @@
+#!/bin/bash
+
+export KNATIVE_VERSION="0.14.0"
+
+export ISTIO_VERSION="1.5.1"
+
+export PROJECT_ID="gce-kubernetes-lab"
+
+export CLUSTER_NAME="knative-014"
+
+export CLUSTER_REGION="europe-west1"
+
+export CLUSTER_ZONE="${CLUSTER_REGION}-b"
+
+export CLUSTER_START_NODE_SIZE=2
+
+export CLUSTER_MAX_NODE_SIZE=10
+
+export CLUSTER_NODE_MACHINE_TYPE="n1-standard-2"
+
+export CLUSTER_MASTER_VERSION="1.14.10-gke.27"
